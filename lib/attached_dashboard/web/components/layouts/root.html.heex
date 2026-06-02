@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-base-200">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content={Phoenix.Controller.get_csrf_token()} />
+    <.live_title suffix=" · AttachedDashboard">{assigns[:page_title] || ""}</.live_title>
+    <link rel="icon" type="image/svg+xml" href={"#{assigns[:prefix] || ""}/#{AssetsController.asset_path("favicon.svg")}"} />
+    <link rel="stylesheet" href={"#{assigns[:prefix] || ""}/#{AssetsController.asset_path("css/app.css")}"} />
+    <script src={"#{assigns[:prefix] || ""}/#{AssetsController.asset_path("js/app.js")}"} defer>
+    </script>
+    <script>
+      (() => {
+        const setTheme = (theme) => {
+          if (theme === "system") {
+            localStorage.removeItem("phx:theme");
+            document.documentElement.removeAttribute("data-theme");
+          } else {
+            localStorage.setItem("phx:theme", theme);
+            document.documentElement.setAttribute("data-theme", theme);
+          }
+        };
+        if (!document.documentElement.hasAttribute("data-theme")) {
+          setTheme(localStorage.getItem("phx:theme") || "system");
+        }
+        window.addEventListener("storage", (e) => e.key === "phx:theme" && setTheme(e.newValue || "system"));
+        window.addEventListener("phx:set-theme", (e) => setTheme(e.target.dataset.phxTheme));
+      })();
+    </script>
+  </head>
+  <body class="attached-dashboard h-full">
+    <AttachedDashboard.Web.Components.Flash.group flash={@flash} />
+    {@inner_content}
+  </body>
+</html>

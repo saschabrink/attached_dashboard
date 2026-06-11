@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.2.1] - 2026-06-11
+
+### Documentation
+
+- README: fixed the router import in the usage example —
+  `AttachedDashboard.Router` → `AttachedDashboard.Web.Router` (the old
+  module doesn't exist, so the copy-pasted snippet failed to compile).
+- README: hex/hexdocs badges, install version bumped to `~> 0.2` with an
+  `attached` version-pairing note, link to the
+  [demo app](https://github.com/saschabrink/attached_phoenix_demo), and
+  screenshots switched to absolute URLs so they render on hex.pm and
+  hexdocs, not just on GitHub.
+
 ## [0.2.0] - 2026-06-11
 
 ### Changed — BREAKING

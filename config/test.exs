@@ -5,6 +5,8 @@ config :attached_dashboard, AttachedDashboard.TestRepo,
   pool_size: 1,
   log: false
 
-config :attached, repo: AttachedDashboard.TestRepo
+config :attached,
+  repo: AttachedDashboard.TestRepo,
+  orphan_grace_period: 0
 
 config :logger, level: :warning

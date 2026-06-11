@@ -46,10 +46,10 @@ defmodule AttachedDashboard.Data.DashboardOriginalsTest do
     end
 
     test "storage_backend filter is exact match" do
-      Factory.insert(:original, storage_backend: "Attached.StorageBackends.Disk")
-      Factory.insert(:original, storage_backend: "Attached.StorageBackends.S3")
+      Factory.insert(:original, storage_backend: "local")
+      Factory.insert(:original, storage_backend: "s3_main")
 
-      result = DashboardOriginals.paginate(storage_backend: "Attached.StorageBackends.Disk")
+      result = DashboardOriginals.paginate(storage_backend: "local")
 
       assert result.total == 1
     end

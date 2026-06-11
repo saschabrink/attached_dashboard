@@ -84,6 +84,7 @@ sql.("""
     name: Oban,
     repo: AttachedDashboard.TestRepo,
     engine: Oban.Engines.Lite,
+    notifier: Oban.Notifiers.PG,
     testing: :manual,
     queues: false,
     plugins: false

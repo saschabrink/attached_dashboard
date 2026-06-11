@@ -1,6 +1,6 @@
 defmodule AttachedDashboard.Web.Live.PagesTest do
   use AttachedDashboard.ConnCase
-  use Oban.Testing, repo: AttachedDashboard.TestRepo
+  use Oban.Testing, repo: AttachedDashboard.TestRepo, notifier: Oban.Notifiers.PG
 
   describe "overview page" do
     test "renders", %{conn: conn} do
@@ -32,12 +32,12 @@ defmodule AttachedDashboard.Web.Live.PagesTest do
 
     test "storage_backend filter only shown when services exist", %{conn: conn} do
       AttachedDashboard.Test.Factory.insert(:original,
-        storage_backend: "Attached.StorageBackends.Disk"
+        storage_backend: "local"
       )
 
       {:ok, _live, html} = live(conn, "/files/originals")
       assert html =~ ~s|name="storage_backend"|
-      assert html =~ "Attached.StorageBackends.Disk"
+      assert html =~ "local"
     end
 
     test "sort_by select reflects the current sort", %{conn: conn} do

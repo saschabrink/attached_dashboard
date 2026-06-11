@@ -1,6 +1,6 @@
 {
   description = "attached_dashboard — development environment";
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
   outputs = { nixpkgs, ... }:
     let
       systems = [ "aarch64-darwin" "x86_64-darwin" "x86_64-linux" "aarch64-linux" ];
@@ -9,7 +9,7 @@
       devShells = forAllSystems (pkgs: {
         default = pkgs.mkShell {
           buildInputs = [
-            pkgs.elixir_1_19
+            pkgs.beam29Packages.elixir_1_20
             pkgs.nodejs_24
             pkgs.imagemagick
             pkgs.vips

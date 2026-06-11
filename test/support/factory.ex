@@ -18,7 +18,7 @@ defmodule AttachedDashboard.Test.Factory do
       byte_size: Map.get(attrs, :byte_size, 1024),
       checksum: Map.get(attrs, :checksum, "abc123=="),
       metadata: Map.get(attrs, :metadata, %{}),
-      storage_backend: Map.get(attrs, :storage_backend, "Attached.StorageBackends.Disk"),
+      storage_backend: Map.get(attrs, :storage_backend, "local"),
       owner_table: Map.get(attrs, :owner_table, "test_owners"),
       owner_field: Map.get(attrs, :owner_field, "photo_attached_original_id"),
       inserted_at: Map.get(attrs, :inserted_at, now),

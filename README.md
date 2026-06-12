@@ -2,6 +2,8 @@
 
 [![Hex.pm](https://img.shields.io/hexpm/v/attached_dashboard.svg)](https://hex.pm/packages/attached_dashboard)
 [![Hexdocs](https://img.shields.io/badge/hex-docs-purple.svg)](https://hexdocs.pm/attached_dashboard)
+[![CI](https://github.com/saschabrink/attached_dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/saschabrink/attached_dashboard/actions/workflows/ci.yml)
+[![License](https://img.shields.io/hexpm/l/attached_dashboard.svg)](https://github.com/saschabrink/attached_dashboard/blob/main/LICENSE)
 
 Phoenix LiveView dashboard for the [`attached`](https://hex.pm/packages/attached) file-attachment library.
 

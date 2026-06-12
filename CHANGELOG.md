@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2] - 2026-06-12
+
+### Changed
+- CI tests against Elixir 1.19 and 1.20 via the Nix flake dev shells.
+- README badges for CI status and license, alongside the existing
+  hex/hexdocs pair.
+
 ## [0.2.1] - 2026-06-11
 
 ### Documentation
